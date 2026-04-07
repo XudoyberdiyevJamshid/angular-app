@@ -1,0 +1,11 @@
+<nav class="menyu">
+  <!-- Kelgan ma'lumotni ekranga chiqaramiz -->
+  <h2>{{ saytNomi() }}</h2>
+
+  <ul>
+    <li routerLink="/">Bosh sahifa</li>
+    <li routerLink="/about">Biz haqimizda</li>
+    <li routerLink="/contact">Aloqa</li>
+    <button (click)="changeTheme()" class="tema-tugmasi">🌓 Tema</button>
+  </ul>
+</nav>

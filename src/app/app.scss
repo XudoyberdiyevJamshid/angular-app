@@ -1,0 +1,11 @@
+.asosiy-oyna {
+  min-height: 80vh;
+  padding: 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.asosiy-oyna.qorongu {
+  background-color: #2c3e50;
+  color: white;
+}

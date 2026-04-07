@@ -1,0 +1,28 @@
+<div class="about-konteyner">
+  <div class="texnologiyalar-qismi">
+    <h3>Biz quyidagi texnologiyalardan foydalanamiz:</h3>
+    <ul>
+      @for (dastur of omborxona.royxat(); track dastur) {
+        <li>
+          ✅ {{ dastur }}
+
+          <button (click)="omborxona.ochirish(dastur)" class="ochirish-tugmasi">X</button>
+        </li>
+      }
+    </ul>
+  </div>
+
+  <h2>Bizning Jamoa (Internetdan kelgan ma'lumot)</h2>
+
+  <div class="jamoa-grid">
+    @for (odam of jamoa(); track odam.id) {
+      <div class="odam-karta">
+        <h4>{{ odam.name }}</h4>
+        <p>📧 {{ odam.email }}</p>
+        <p>🏢 {{ odam.company.name }}</p>
+      </div>
+    } @empty {
+      <p>⏳ Ma'lumotlar yuklanmoqda...</p>
+    }
+  </div>
+</div>

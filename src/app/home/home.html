@@ -1,0 +1,24 @@
+<div class="dasturlar-konteyneri">
+  <h3 class="sarlavha">Mashhur Web Freymvorklar:</h3>
+
+  <ul class="dastur-royxati">
+    @for (dastur of omborxona.royxat(); track dastur) {
+      <li class="dastur-elementi">{{ dastur }}</li>
+    }
+  </ul>
+
+  <div class="qoshish-maydoni">
+    <input
+      type="text"
+      #yangiDastur
+      placeholder="Yangi dastur nomini yozing"
+      class="kiritish-oynasi"
+    />
+    <button
+      (click)="dasturQoshish(yangiDastur.value); yangiDastur.value = ''"
+      class="qoshish-tugmasi"
+    >
+      Ro'yxatga qo'shish
+    </button>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+.about-konteyner {
+  padding: 20px;
+}
+.jamoa-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+.odam-karta {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 5px solid #0d6efd;
+  width: 250px;
+  color: #333;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.odam-karta h4 {
+  margin: 0 0 10px 0;
+}
+.odam-karta p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.texnologiyalar-qismi {
+  background-color: #e9ecef;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  color: #333;
+}
+.texnologiyalar-qismi ul {
+  list-style: none;
+  padding: 0;
+}
+
+.ochirish-tugmasi {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  margin-left: 10px;
+  cursor: pointer;
+  padding: 2px 8px;
+  font-weight: bold;
+}
+.ochirish-tugmasi:hover {
+  background-color: #c82333;
+}
