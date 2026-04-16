@@ -1,6 +1,21 @@
 <div class="dasturlar-konteyneri">
   <h3 class="sarlavha">Mashhur Web Freymvorklar:</h3>
 
+  <div class="statistika-qutisi">
+    <!-- Sana formati (DatePipe) -->
+    <h4>
+      📅 Bugungi sana: <span class="ajratilgan">{{ bugungiSana | date: 'fullDate' }}</span>
+    </h4>
+
+    <!-- Pul formati (CurrencyPipe) - UZS degani so'm degani -->
+    <h4>
+      💰 Kurs narxi: <span class="ajratilgan">{{ kursNarxi | currency: 'UZS' }}</span>
+    </h4>
+    <h4>
+      📊 Jami texnologiyalar soni: <span class="ajratilgan">{{ omborxona.jamiSoni() }} ta</span>
+    </h4>
+  </div>
+
   <ul class="dastur-royxati">
     @for (dastur of omborxona.royxat(); track dastur) {
       <li class="dastur-elementi">{{ dastur }}</li>

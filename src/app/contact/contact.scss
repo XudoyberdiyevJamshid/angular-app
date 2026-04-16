@@ -1,0 +1,58 @@
+.forma-konteyner {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+.kiritish-qutisi {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+.kiritish-qutisi label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+.kiritish-qutisi input,
+.kiritish-qutisi textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.yuborish-tugmasi {
+  background: #0d6efd;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+}
+.yuborish-tugmasi:hover {
+  background: #0b5ed7;
+}
+
+/* Xato xabari uchun qizil kichik matn */
+.xato-matn {
+  color: #dc3545;
+  font-size: 13px;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+/* Angular xato va tegib chiqilgan inputlarga avtomatik ng-invalid va ng-touched classlarini qo'shadi */
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+  border-color: #dc3545;
+  background-color: #fff8f8; /* fonini ham sal qizg'ish qilamiz */
+}
+
+/* Tugma qulflanganda (disabled) xira rangda turishi uchun */
+.yuborish-tugmasi:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.7;
+}

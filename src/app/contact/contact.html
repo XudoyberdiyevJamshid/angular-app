@@ -1,1 +1,36 @@
-<p>contact works!</p>
+<div class="forma-konteyner">
+  <h2>Biz bilan bog'laning</h2>
+  <form [formGroup]="aloqaForm" (ngSubmit)="formaniYuborish()">
+    <div class="kiritish-qutisi">
+      <label>Ismingiz:</label>
+      <input type="text" formControlName="ism" placeholder="Masalan: Alisher" />
+      @if (aloqaForm.get('ism')?.invalid && aloqaForm.get('ism')?.touched) {
+        <small class="xato-matn">Ism kiritish majburiy (kamida 3 ta harf).</small>
+      }
+    </div>
+
+    <div class="kiritish-qutisi">
+      <label>Telefon raqamingiz:</label>
+      <input type="text" formControlName="telefon" placeholder="+998 90 123 45 67" />
+      @if (aloqaForm.get('telefon')?.invalid && aloqaForm.get('telefon')?.touched) {
+        <small class="xato-matn">Telefon raqam to'liq emas.</small>
+      }
+    </div>
+
+    <div class="kiritish-qutisi">
+      <label>Xabaringiz:</label>
+      <textarea
+        formControlName="xabar"
+        rows="4"
+        placeholder="Nimada yordam bera olamiz?"
+      ></textarea>
+      @if (aloqaForm.get('xabar')?.invalid && aloqaForm.get('xabar')?.touched) {
+        <small class="xato-matn">Xabar yozish majburiy!</small>
+      }
+    </div>
+
+    <button type="submit" class="yuborish-tugmasi" [disabled]="aloqaForm.invalid">
+      Xabarni yuborish
+    </button>
+  </form>
+</div>

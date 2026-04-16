@@ -1,10 +1,12 @@
-import { Injectable, signal } from '@angular/core';
+import { computed, Injectable, signal } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DasturlarService {
   royxat = signal(['Angular', 'React', 'Vue', 'Svelte']);
+
+  jamiSoni = computed(() => this.royxat().length);
 
   qoshish(yangiNom: string) {
     if (yangiNom) {
