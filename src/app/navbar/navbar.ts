@@ -1,5 +1,6 @@
-import { Component, input, output } from '@angular/core';
+import { Component, inject, input, output } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { AuthService } from '../auth';
 
 @Component({
   selector: 'app-navbar',
@@ -15,4 +16,5 @@ export class Navbar {
   changeTheme() {
     this.toogleTheme.emit('change');
   }
+  auth = inject(AuthService);
 }

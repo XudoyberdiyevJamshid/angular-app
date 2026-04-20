@@ -6,6 +6,20 @@
     <li routerLink="/">Bosh sahifa</li>
     <li routerLink="/about">Biz haqimizda</li>
     <li routerLink="/contact">Aloqa</li>
+    @if (auth.tizimgaKirdimi()) {
+      <li routerLink="/profile" style="color: #20c997">Profil 🔒</li>
+      <button
+        (click)="auth.logout()"
+        class="tema-tugmasi"
+        style="background: #dc3545; color: white"
+      >
+        Chiqish
+      </button>
+    } @else {
+      <button (click)="auth.login()" class="tema-tugmasi" style="background: #198754; color: white">
+        Kirish
+      </button>
+    }
     <button (click)="changeTheme()" class="tema-tugmasi">🌓 Tema</button>
   </ul>
 </nav>

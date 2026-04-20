@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { DasturlarService } from '../dasturlar';
 
 @Component({
@@ -8,12 +8,11 @@ import { DasturlarService } from '../dasturlar';
   templateUrl: './about.html',
   styleUrl: './about.scss',
 })
-export class About {
+export class About implements OnInit {
   http = inject(HttpClient);
   omborxona = inject(DasturlarService);
   jamoa = signal<any[]>([]);
-
-  constructor() {
+  ngOnInit(): void {
     this.http.get('https://jsonplaceholder.typicode.com/users').subscribe((malumot: any) => {
       this.jamoa.set(malumot);
     });

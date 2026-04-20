@@ -13,16 +13,21 @@
   </div>
 
   <h2>Bizning Jamoa (Internetdan kelgan ma'lumot)</h2>
-
-  <div class="jamoa-grid">
-    @for (odam of jamoa(); track odam.id) {
-      <div class="odam-karta">
-        <h4>{{ odam.name }}</h4>
-        <p>📧 {{ odam.email }}</p>
-        <p>🏢 {{ odam.company.name }}</p>
-      </div>
-    } @empty {
-      <p>⏳ Ma'lumotlar yuklanmoqda...</p>
-    }
-  </div>
+  @defer (on timer(2s)) {
+    <div class="jamoa-grid">
+      @for (odam of jamoa(); track odam.id) {
+        <div class="odam-karta">
+          <h4>{{ odam.name }}</h4>
+          <p>📧 {{ odam.email }}</p>
+          <p>🏢 {{ odam.company.name }}</p>
+        </div>
+      } @empty {
+        <p>⏳ Ma'lumotlar yuklanmoqda...</p>
+      }
+    </div>
+  } @placeholder {
+    <div style="padding: 20px; text-align: center; background: #e9ecef; border-radius: 8px">
+      ⏳ Jamoa a'zolari ma'lumotlari 2 soniyadan so'ng yuklanadi. Kuting...
+    </div>
+  }
 </div>
