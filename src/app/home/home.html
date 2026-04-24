@@ -36,4 +36,25 @@
       Ro'yxatga qo'shish
     </button>
   </div>
+
+  <div class="qidiruv-qismi">
+  <h3>🔍 Dasturlarni qidirish (RxJS namunasi)</h3>
+  
+  <input 
+    type="text" 
+    [formControl]="qidiruvQutisi" 
+    placeholder="Dastur nomini yozing..." 
+    class="kiritish-oynasi"
+  >
+</div>
+
+<hr>
+
+<ul class="dastur-royxati">
+  @for (dastur of (topilganNatijalar().length > 0 || qidiruvQutisi.value ? topilganNatijalar() : omborxona.royxat()); track dastur) {
+    <li class="dastur-elementi">{{ dastur }}</li>
+  } @empty {
+    <p style="color: red;">Hech narsa topilmadi! 😔</p>
+  }
+</ul>
 </div>

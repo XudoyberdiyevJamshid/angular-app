@@ -1,10 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { DasturlarService } from '../dasturlar';
+import { UserCard } from "../user-card/user-card";
 
 @Component({
   selector: 'app-about',
-  imports: [],
+  imports: [UserCard],
   templateUrl: './about.html',
   styleUrl: './about.scss',
 })

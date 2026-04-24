@@ -15,15 +15,17 @@
   <h2>Bizning Jamoa (Internetdan kelgan ma'lumot)</h2>
   @defer (on timer(2s)) {
     <div class="jamoa-grid">
-      @for (odam of jamoa(); track odam.id) {
-        <div class="odam-karta">
-          <h4>{{ odam.name }}</h4>
-          <p>📧 {{ odam.email }}</p>
-          <p>🏢 {{ odam.company.name }}</p>
-        </div>
-      } @empty {
-        <p>⏳ Ma'lumotlar yuklanmoqda...</p>
+      @defer (on timer(2s)) {
+    <div class="jamoa-grid">
+      
+      @for (xodim of jamoa(); track xodim.id) {
+        
+        <app-user-card [odam]="xodim"></app-user-card>
+
       }
+
+    </div>
+  }
     </div>
   } @placeholder {
     <div style="padding: 20px; text-align: center; background: #e9ecef; border-radius: 8px">
