@@ -28,6 +28,23 @@
         <small class="xato-matn">Xabar yozish majburiy!</small>
       }
     </div>
+    <div formArrayName="konikmalar" class="dinamik-quti">
+      <h3 style="margin-bottom: 10px;">Texnik ko'nikmalaringizni kiriting:</h3>
+      
+      @for (konikma of konikmalar.controls; track $index) {
+        
+        <div class="kiritish-qatori">
+          <input type="text" [formControlName]="$index" placeholder="Masalan: Angular, Vue, CSS...">
+          
+          @if (konikmalar.length > 1) {
+            <button type="button" (click)="konikmaniOchirish($index)" class="ochirish-btn">X</button>
+          }
+        </div>
+
+      }
+
+      <button type="button" (click)="yangiKonikmaQoshish()" class="qoshish-btn">+ Yana qo'shish</button>
+    </div>
 
     <button type="submit" class="yuborish-tugmasi" [disabled]="aloqaForm.invalid">
       Xabarni yuborish

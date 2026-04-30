@@ -1,0 +1,23 @@
+<div class="admin-panel">
+  <div class="sidebar">
+    <h2>👑 Admin Panel</h2>
+    <ul>
+      <!-- Diqqat: Bu yerda /admin/dashboard deb yozish shart emas. Chunki biz shundoq ham adminni ichidamiz -->
+      <li><a routerLink="dashboard">📊 Boshqaruv paneli</a></li>
+      <li><a routerLink="settings">⚙️ Sozlamalar</a></li>
+      <li><a routerLink="/">🔙 Saytga qaytish</a></li>
+    </ul>
+  </div>
+  <div class="admin-content">
+    <h3 appHighlight>Xush kelibsiz, Boshliq!</h3>
+    <p appHighlight [rang]="'#28a745'" style="display: inline-block">
+      Bu matn ustiga kelsangiz yashil bo'ladi.
+    </p>
+    <hr />
+
+    <!-- O'zgaruvchan joy (Televizor). Bola komponentlar faqat shu yerda chiqadi -->
+    <div class="ichki-ekran">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
